@@ -29,7 +29,46 @@ export default observer(function Home() {
         {store.error}
       </div>
     )}
-    <h1 className = "text-6xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-purple-500">Wordle</h1>
+    <h1 style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      whiteSpace: 'nowrap',
+      position: 'relative',
+      padding: '14px 26px',
+      fontWeight: 800,
+      fontSize: '92px',
+      lineHeight: 1,
+      letterSpacing: '-0.01em',
+      color: '#f4e7ee',
+      fontFamily: "'Playfair Display', serif",
+    }}>
+      <span style={{ position: 'absolute', top: '-10px', left: '-30px', transform: 'rotate(-18deg)' }}>
+        <svg width="64" height="64" viewBox="-50 -50 100 100" aria-hidden="true">
+          <path d="M-32,42 C-10,28 6,4 14,-26" fill="none" stroke="#9aa85a" strokeWidth="3.2" strokeLinecap="round" />
+          <path d="M-12,22 C-26,18 -34,6 -30,-6 C-16,-2 -8,8 -12,22 Z" fill="#9aa85a" />
+          <path d="M2,2 C-4,-12 2,-26 14,-30 C16,-16 12,-2 2,2 Z" fill="#9aa85a" />
+          <g transform="translate(14,-30) scale(0.42)">
+            <path transform="rotate(0)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+            <path transform="rotate(72)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+            <path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+            <path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+            <path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+            <circle r="6" fill="#ecc85a" />
+          </g>
+        </svg>
+      </span>
+      <span style={{ position: 'absolute', bottom: '-14px', left: '-26px', transform: 'rotate(150deg)' }}>
+        <svg width="26" height="26" viewBox="-50 -50 100 100" aria-hidden="true"><path d="M0,42 C-28,18 -28,-24 0,-46 C28,-24 28,18 0,42 Z" fill="#9aa85a"/><path d="M0,40 L0,-40" stroke="rgba(0,0,0,0.14)" strokeWidth="2.4" fill="none" strokeLinecap="round"/></svg>
+      </span>
+      <span style={{ position: 'absolute', bottom: '-18px', right: '-22px', transform: 'rotate(20deg) scaleX(-1)' }}>
+        <svg width="58" height="58" viewBox="-50 -50 100 100" aria-hidden="true"><path d="M-32,42 C-10,28 6,4 14,-26" fill="none" stroke="#9aa85a" strokeWidth="3.2" strokeLinecap="round"/><path d="M-12,22 C-26,18 -34,6 -30,-6 C-16,-2 -8,8 -12,22 Z" fill="#9aa85a"/><path d="M2,2 C-4,-12 2,-26 14,-30 C16,-16 12,-2 2,2 Z" fill="#9aa85a"/><g transform="translate(14,-30) scale(0.42)"><path transform="rotate(0)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(72)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><circle r="6" fill="#ecc85a"/></g></svg>
+      </span>
+      <span style={{ marginRight: '0.005em' }}>Fl</span>
+      <span style={{ display: 'inline-flex', margin: '0 0.005em', transform: 'translateY(0.02em)' }}>
+        <svg width="70" height="70" viewBox="-50 -50 100 100" aria-hidden="true"><g><path transform="rotate(0)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(72)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/></g><g stroke="#f0a8c2" strokeWidth="1.3" strokeLinecap="round" fill="#f0a8c2"><g transform="rotate(0.0)"><line y2="-10"/><circle cy="-11" r="1.7"/></g><g transform="rotate(51.4)"><line y2="-10"/><circle cy="-11" r="1.7"/></g><g transform="rotate(102.9)"><line y2="-10"/><circle cy="-11" r="1.7"/></g><g transform="rotate(154.3)"><line y2="-10"/><circle cy="-11" r="1.7"/></g><g transform="rotate(205.7)"><line y2="-10"/><circle cy="-11" r="1.7"/></g><g transform="rotate(257.1)"><line y2="-10"/><circle cy="-11" r="1.7"/></g><g transform="rotate(308.6)"><line y2="-10"/><circle cy="-11" r="1.7"/></g></g><circle r="5" fill="#ecc85a"/></svg>
+      </span>
+      <span style={{ marginLeft: '0.005em' }}>rdle</span>
+    </h1>
     {store.guesses.map((_, i) => (
         <Guess
           key = {i}
