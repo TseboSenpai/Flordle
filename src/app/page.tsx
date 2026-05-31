@@ -1,0 +1,52 @@
+'use client';
+
+import { observer, useLocalObservable } from "mobx-react-lite";
+import Guess from "../../components/Guess";
+import Qwerty from "../../components/Qwerty";
+import PuzzleStore from "../../stores/PuzzleStore";
+import { useEffect } from "react";
+
+export default observer(function Home() {
+  // instantiate the class-backed store so methods are available
+  const store = useLocalObservable(() => PuzzleStore())
+  useEffect(() => {
+    store.init()
+    const handler = (e: KeyboardEvent) => store.handleKeyup(e)
+    window.addEventListener('keyup', handler)
+
+    // debug: log available store keys
+    // eslint-disable-next-line no-console
+    console.log('store keys:', Object.keys(store))
+
+    return () => {
+      window.removeEventListener('keyup', handler)
+    }
+  }, [])
+
+  return <div className="flex h-screen w-screen flex-col items-center justify-center">
+    {store.error && (
+      <div className="mt-4 rounded bg-red-800/60 px-4 py-2 text-red-100">
+        {store.error}
+      </div>
+    )}
+    <h1 className = "text-6xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-purple-500">Wordle</h1>
+    {store.guesses.map((_, i) => (
+        <Guess
+          key = {i}
+          word={store.word}
+          guess={store.guesses[i]}
+          isGuessed={i < store.currentGuess}
+        />
+    ))}
+  
+    {store.won && <h1>You Won!</h1>}
+    {store.lost && <p style={{ textAlign: 'center' }}>You Lost!<br/>The word was: {store.word}</p>}
+    {(store.won || store.lost) && (
+      <button onClick={store.init}>Play Again</button>
+    )}
+    <Qwerty store={store} />
+    {/* word: {store.word}
+    guesses: {JSON.stringify(store.guesses)}
+    */}
+  </div>
+})

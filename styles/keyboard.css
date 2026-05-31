@@ -1,0 +1,38 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 8px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    width: 100%;
+}
+
+.keyboard-key {
+    font-weight: bold;
+    border: 0;
+    height: 58px;
+    cursor: pointer;
+    background: linear-gradient(180deg, var(--key-bg), rgba(0,0,0,0.18));
+    color: var(--foreground);
+    flex: 1;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(2,6,23,0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.keyboard-key:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(2,6,23,0.6);
+}
