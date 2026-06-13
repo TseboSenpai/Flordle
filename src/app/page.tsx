@@ -24,7 +24,14 @@ export default observer(function Home() {
     }
   }, [])
 
-  return <div className="flex h-screen w-screen flex-col items-center justify-center">
+  return <div
+    className="flex h-screen w-screen flex-col items-center justify-center"
+    style={{
+      backgroundImage: 'var(--page-bg-image)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  >
     <ThemeToggle />
     {store.error && (
       <div className="mt-4 rounded bg-red-800/60 px-4 py-2 text-red-100">
