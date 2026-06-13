@@ -10,6 +10,8 @@
   --foreground: #e6eef8;
   --muted: #818384;
   --key-bg: #2a2a2f;
+  --flordle-ink: #f4e7ee;
+  --flordle-olive: #9aa85a;
 }
 
 @theme inline {
@@ -21,16 +23,49 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-0: #f8fafc;
-    --bg-1: linear-gradient(180deg,#eef2ff,#fff0f6);
-    --surface: rgba(15,23,42,0.02);
+    --bg-0: #faf2f5;
+    --bg-1: linear-gradient(160deg, #fdf0f5, #faf2f5);
+    --surface: rgba(122,41,73,0.03);
     --primary: #6d28d9;
     --accent: #0891b2;
     --highlight: #db2777;
     --foreground: #0f172a;
     --muted: #6b7280;
     --key-bg: #e5e7eb;
+    --flordle-ink: #7a2949;
+    --flordle-olive: #7c8a45;
+    --tile-border: rgba(0,0,0,0.1);
   }
+}
+
+/* Manual overrides via data-theme attribute (higher specificity than :root) */
+html[data-theme="dark"] {
+  --bg-0: #060114;
+  --bg-1: radial-gradient(800px 400px at 10% 10%, rgba(124,58,237,0.18), transparent 20%), radial-gradient(600px 300px at 90% 80%, rgba(6,182,212,0.12), transparent 25%), var(--bg-0);
+  --surface: rgba(255,255,255,0.03);
+  --primary: #7c3aed;
+  --accent: #06b6d4;
+  --highlight: #fb7185;
+  --foreground: #e6eef8;
+  --muted: #818384;
+  --key-bg: #2a2a2f;
+  --flordle-ink: #f4e7ee;
+  --flordle-olive: #9aa85a;
+}
+
+html[data-theme="light"] {
+  --bg-0: #faf2f5;
+  --bg-1: linear-gradient(160deg, #fdf0f5, #faf2f5);
+  --surface: rgba(122,41,73,0.03);
+  --primary: #6d28d9;
+  --accent: #0891b2;
+  --highlight: #db2777;
+  --foreground: #0f172a;
+  --muted: #6b7280;
+  --key-bg: #e5e7eb;
+  --flordle-ink: #7a2949;
+  --flordle-olive: #7c8a45;
+  --tile-border: rgba(0,0,0,0.1);
 }
 
 body {
@@ -95,3 +130,7 @@ body {
 .key.correct { background: var(--status-correct); color: var(--tile-text-on-dark); }
 .key.present { background: var(--status-present); color: var(--tile-text-on-dark); }
 .key.absent { background: var(--status-absent); color: var(--tile-text-on-light); }
+
+/* Theme-responsive foliage — CSS fill/stroke override SVG presentation attributes */
+.flordle-deco path[fill="#9aa85a"] { fill: var(--flordle-olive); }
+.flordle-deco path[stroke="#9aa85a"] { stroke: var(--flordle-olive); }

@@ -5,6 +5,7 @@ import Guess from "../../components/Guess";
 import Qwerty from "../../components/Qwerty";
 import PuzzleStore from "../../stores/PuzzleStore";
 import { useEffect } from "react";
+import ThemeToggle from "../../components/ThemeToggle";
 
 export default observer(function Home() {
   // instantiate the class-backed store so methods are available
@@ -24,6 +25,7 @@ export default observer(function Home() {
   }, [])
 
   return <div className="flex h-screen w-screen flex-col items-center justify-center">
+    <ThemeToggle />
     {store.error && (
       <div className="mt-4 rounded bg-red-800/60 px-4 py-2 text-red-100">
         {store.error}
@@ -39,10 +41,10 @@ export default observer(function Home() {
       fontSize: '92px',
       lineHeight: 1,
       letterSpacing: '-0.01em',
-      color: '#f4e7ee',
+      color: 'var(--flordle-ink)',
       fontFamily: "'Playfair Display', serif",
     }}>
-      <span style={{ position: 'absolute', top: '-10px', left: '-30px', transform: 'rotate(-18deg)' }}>
+      <span className="flordle-deco" style={{ position: 'absolute', top: '-10px', left: '-30px', transform: 'rotate(-18deg)' }}>
         <svg width="64" height="64" viewBox="-50 -50 100 100" aria-hidden="true">
           <path d="M-32,42 C-10,28 6,4 14,-26" fill="none" stroke="#9aa85a" strokeWidth="3.2" strokeLinecap="round" />
           <path d="M-12,22 C-26,18 -34,6 -30,-6 C-16,-2 -8,8 -12,22 Z" fill="#9aa85a" />
@@ -57,10 +59,10 @@ export default observer(function Home() {
           </g>
         </svg>
       </span>
-      <span style={{ position: 'absolute', bottom: '-14px', left: '-26px', transform: 'rotate(150deg)' }}>
+      <span className="flordle-deco" style={{ position: 'absolute', bottom: '-14px', left: '-26px', transform: 'rotate(150deg)' }}>
         <svg width="26" height="26" viewBox="-50 -50 100 100" aria-hidden="true"><path d="M0,42 C-28,18 -28,-24 0,-46 C28,-24 28,18 0,42 Z" fill="#9aa85a"/><path d="M0,40 L0,-40" stroke="rgba(0,0,0,0.14)" strokeWidth="2.4" fill="none" strokeLinecap="round"/></svg>
       </span>
-      <span style={{ position: 'absolute', bottom: '-18px', right: '-22px', transform: 'rotate(20deg) scaleX(-1)' }}>
+      <span className="flordle-deco" style={{ position: 'absolute', bottom: '-18px', right: '-22px', transform: 'rotate(20deg) scaleX(-1)' }}>
         <svg width="58" height="58" viewBox="-50 -50 100 100" aria-hidden="true"><path d="M-32,42 C-10,28 6,4 14,-26" fill="none" stroke="#9aa85a" strokeWidth="3.2" strokeLinecap="round"/><path d="M-12,22 C-26,18 -34,6 -30,-6 C-16,-2 -8,8 -12,22 Z" fill="#9aa85a"/><path d="M2,2 C-4,-12 2,-26 14,-30 C16,-16 12,-2 2,2 Z" fill="#9aa85a"/><g transform="translate(14,-30) scale(0.42)"><path transform="rotate(0)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(72)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/><circle r="6" fill="#ecc85a"/></g></svg>
       </span>
       <span style={{ marginRight: '0.005em' }}>Fl</span>
