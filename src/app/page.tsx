@@ -26,7 +26,7 @@ export default observer(function Home() {
   }, [])
 
   return <div
-    className="flex h-screen w-screen flex-col items-center justify-center"
+    className="flex h-screen w-screen flex-col items-center"
     style={{
       backgroundImage: 'var(--page-bg-image)',
       backgroundSize: 'cover',
@@ -34,6 +34,7 @@ export default observer(function Home() {
     }}
   >
     <ThemeToggle />
+    <div className="flex flex-1 flex-col items-center justify-center">
     {store.error && (
       <div className="mt-4 rounded bg-red-800/60 px-4 py-2 text-red-100">
         {store.error}
@@ -94,45 +95,39 @@ export default observer(function Home() {
       <button onClick={store.init}>Play Again</button>
     )}
     <Qwerty store={store} />
-    {/* word: {store.word}
-    guesses: {JSON.stringify(store.guesses)}
-    */}
+    </div>
 
-    {/* Fixed Contact button */}
-    <button
-      onClick={() => setIsContactOpen(true)}
-      style={{
-        position: 'fixed',
-        bottom: '24px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 50,
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '8px',
-        padding: '10px 22px',
-        background: 'var(--primary)',
-        color: 'var(--flordle-ink)',
-        border: 'none',
-        borderRadius: '24px',
-        backdropFilter: 'blur(6px)',
-        fontSize: '14px',
-        fontWeight: 600,
-        cursor: 'pointer',
-        letterSpacing: '0.01em',
-        whiteSpace: 'nowrap',
-      }}
-    >
-      <svg width="18" height="18" viewBox="-50 -50 100 100" aria-hidden="true">
-        <path transform="rotate(0)"   d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-        <path transform="rotate(72)"  d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-        <path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-        <path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-        <path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-        <circle r="6" fill="#ecc85a" />
-      </svg>
-      Contact
-    </button>
+    {/* Contact button section — sits below the keyboard in flow */}
+    <div className="flex w-full justify-center pb-6 pt-4">
+      <button
+        onClick={() => setIsContactOpen(true)}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+          padding: '10px 22px',
+          background: 'var(--primary)',
+          color: 'var(--flordle-ink)',
+          border: 'none',
+          borderRadius: '24px',
+          fontSize: '14px',
+          fontWeight: 600,
+          cursor: 'pointer',
+          letterSpacing: '0.01em',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        <svg width="18" height="18" viewBox="-50 -50 100 100" aria-hidden="true">
+          <path transform="rotate(0)"   d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+          <path transform="rotate(72)"  d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+          <path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+          <path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+          <path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
+          <circle r="6" fill="#ecc85a" />
+        </svg>
+        Contact
+      </button>
+    </div>
 
     {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
   </div>
