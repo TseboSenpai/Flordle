@@ -107,7 +107,7 @@ export default observer(function Home() {
           gap: '8px',
           padding: '10px 22px',
           background: 'var(--primary)',
-          color: 'var(--flordle-ink)',
+          color: 'white',
           border: 'none',
           borderRadius: '24px',
           fontSize: '14px',

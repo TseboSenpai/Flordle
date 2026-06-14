@@ -184,7 +184,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
               style={{
                 marginTop: '4px',
                 background: 'var(--primary)',
-                color: 'var(--flordle-ink)',
+                color: 'white',
                 border: 'none',
                 borderRadius: '24px',
                 padding: '12px 28px',
