@@ -172,7 +172,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="How can I help you?"
+                placeholder="What's on your mind?"
                 rows={5}
                 required
                 style={{ ...inputStyle, resize: 'vertical' }}
