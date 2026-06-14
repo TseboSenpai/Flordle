@@ -84,6 +84,9 @@ class PuzzleStoreClass {
     }
 
     handleKeyup(e: KeyboardEvent) {
+        const tag = (e.target as HTMLElement)?.tagName
+        if (tag === 'INPUT' || tag === 'TEXTAREA') return
+        if (!e.key) return
         if (this.won || this.lost) return
         if (e.key === 'Enter') return this.Submitguess()
         if (e.key === 'Backspace') {

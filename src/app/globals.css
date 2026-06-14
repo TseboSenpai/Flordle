@@ -13,6 +13,7 @@
   --key-bg: #7a2949;
   --flordle-ink: #f4e7ee;
   --flordle-olive: #9aa85a;
+  --modal-backdrop: rgba(0,0,0,0.5);
 }
 
 @theme inline {
@@ -37,6 +38,7 @@
     --flordle-ink: #7a2949;
     --flordle-olive: #7c8a45;
     --tile-border: rgba(0,0,0,0.35);
+    --modal-backdrop: rgba(0,0,0,0.3);
   }
 }
 
@@ -71,6 +73,7 @@ html[data-theme="light"] {
   --flordle-ink: #7a2949;
   --flordle-olive: #7c8a45;
   --tile-border: rgba(0,0,0,0.35);
+  --modal-backdrop: rgba(0,0,0,0.3);
 }
 
 body {
