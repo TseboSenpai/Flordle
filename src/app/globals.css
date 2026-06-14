@@ -36,7 +36,7 @@
     --key-bg: #7a2949;
     --flordle-ink: #7a2949;
     --flordle-olive: #7c8a45;
-    --tile-border: rgba(0,0,0,0.1);
+    --tile-border: rgba(0,0,0,0.35);
   }
 }
 
@@ -70,7 +70,7 @@ html[data-theme="light"] {
   --key-absent-bg: #7a2949;
   --flordle-ink: #7a2949;
   --flordle-olive: #7c8a45;
-  --tile-border: rgba(0,0,0,0.1);
+  --tile-border: rgba(0,0,0,0.35);
 }
 
 body {
@@ -95,14 +95,14 @@ body {
   --status-present: #B05276; /* China Rose */
   --status-absent: #DBBABF; /* Pale Silver */
   --key-absent-bg: var(--status-absent);
-  --tile-border: rgba(255,255,255,0.08);
+  --tile-border: rgba(255,255,255,0.35);
   --tile-text-on-dark: #ffffff;
   --tile-text-on-light: #0f172a;
 }
 
 .tile {
   border-radius: 6px;
-  border: 1px solid var(--tile-border);
+  border: 2px solid var(--tile-border);
   display: inline-flex;
   align-items: center;
   justify-content: center;
