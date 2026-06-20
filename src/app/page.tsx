@@ -99,40 +99,37 @@ export default observer(function Home() {
   
     {store.won && <h1>You Won!</h1>}
     {store.lost && <p style={{ textAlign: 'center' }}>You Lost!<br/>The word was: {store.word}</p>}
-    {(store.won || store.lost) && (
-      <button onClick={store.init}>Play Again</button>
-    )}
     <Qwerty store={store} />
     </div>
 
-    {/* Contact button section — sits below the keyboard in flow */}
-    <div className="flex w-full justify-center pb-6 pt-4">
-      <button
-        onClick={() => setIsContactOpen(true)}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '10px 22px',
-          background: 'var(--primary)',
-          color: 'white',
-          border: 'none',
-          borderRadius: '24px',
-          fontSize: '14px',
-          fontWeight: 600,
-          cursor: 'pointer',
-          letterSpacing: '0.01em',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        <svg width="18" height="18" viewBox="-50 -50 100 100" aria-hidden="true">
-          <path transform="rotate(0)"   d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-          <path transform="rotate(72)"  d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-          <path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-          <path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-          <path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round" />
-          <circle r="6" fill="#ecc85a" />
-        </svg>
+    {/* Bottom button row */}
+    <div className="flex w-full justify-center gap-3 pb-6 pt-4">
+      {(store.won || store.lost) && (
+        <button className="pa-bloom" onClick={store.init}>
+          <span className="pa-bloom__ico">
+            <svg width="18" height="18" viewBox="-50 -50 100 100" aria-hidden="true">
+              <path transform="rotate(0)"   d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+              <path transform="rotate(72)"  d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+              <path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+              <path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+              <path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+              <circle r="6" fill="#ecc85a"/>
+            </svg>
+          </span>
+          Play again
+        </button>
+      )}
+      <button className="pa-bloom" onClick={() => setIsContactOpen(true)}>
+        <span className="pa-bloom__ico">
+          <svg width="18" height="18" viewBox="-50 -50 100 100" aria-hidden="true">
+            <path transform="rotate(0)"   d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+            <path transform="rotate(72)"  d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+            <path transform="rotate(144)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+            <path transform="rotate(216)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+            <path transform="rotate(288)" d="M0,-4 C-11,-15 -13,-31 -4,-38 C-2,-40 -1,-37 0,-35 C1,-37 2,-40 4,-38 C13,-31 11,-15 0,-4 Z" fill="#cf6f93" stroke="#b9517a" strokeWidth="1.4" strokeLinejoin="round"/>
+            <circle r="6" fill="#ecc85a"/>
+          </svg>
+        </span>
         Contact
       </button>
     </div>
