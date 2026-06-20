@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ThemeToggle from "../../components/ThemeToggle";
 import ContactModal from "../../components/ContactModal";
 import confetti from "canvas-confetti";
+import { MusicPlayer } from "../../components/Music";
 
 export default observer(function Home() {
   const store = useLocalObservable(() => PuzzleStore())
@@ -41,6 +42,9 @@ export default observer(function Home() {
       backgroundPosition: 'center',
     }}
   >
+    <div style={{ position: 'fixed', left: 16, top: 16, zIndex: 50 }}>
+      <MusicPlayer />
+    </div>
     <ThemeToggle />
     <div className="flex flex-1 flex-col items-center justify-center">
     {store.error && (
