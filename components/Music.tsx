@@ -53,11 +53,11 @@ export const MusicPlayer = () => {
         border: 'none',
       }
     : {
-        background: hovered ? 'rgba(207,111,147,.12)' : 'transparent',
-        color: '#8b7d88',
+        background: hovered ? 'rgba(207,111,147,.28)' : 'rgba(207,111,147,.18)',
+        color: '#cf6f93',
         boxShadow: 'none',
         transform: 'none',
-        border: '1.5px solid rgba(139,125,136,.45)',
+        border: '1.5px solid rgba(207,111,147,.5)',
       };
 
   return (
