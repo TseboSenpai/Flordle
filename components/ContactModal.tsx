@@ -181,19 +181,12 @@ export default function ContactModal({ onClose }: ContactModalProps) {
             <button
               type="submit"
               disabled={loading}
+              className="pa-bloom"
               style={{
                 marginTop: '4px',
-                background: 'var(--primary)',
-                color: 'white',
-                border: 'none',
-                borderRadius: '24px',
-                padding: '12px 28px',
-                fontSize: '15px',
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 600,
+                alignSelf: 'center',
                 cursor: loading ? 'not-allowed' : 'pointer',
                 opacity: loading ? 0.7 : 1,
-                alignSelf: 'center',
               }}
             >
               {loading ? "Sending..." : "Send Message"}
