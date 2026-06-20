@@ -7,10 +7,18 @@ import PuzzleStore from "../../stores/PuzzleStore";
 import { useEffect, useState } from "react";
 import ThemeToggle from "../../components/ThemeToggle";
 import ContactModal from "../../components/ContactModal";
+import confetti from "canvas-confetti";
 
 export default observer(function Home() {
   const store = useLocalObservable(() => PuzzleStore())
   const [isContactOpen, setIsContactOpen] = useState(false)
+
+  useEffect(() => {
+    if (store.won) {
+      confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } })
+    }
+  }, [store.won])
+
   useEffect(() => {
     store.init()
     const handler = (e: KeyboardEvent) => store.handleKeyup(e)
@@ -128,6 +136,10 @@ export default observer(function Home() {
         Contact
       </button>
     </div>
+
+    {/* word: {store.word}
+    guesses: {JSON.stringify(store.guesses)} */}
+    
 
     {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
   </div>
