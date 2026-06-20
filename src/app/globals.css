@@ -204,7 +204,20 @@ html[data-theme="light"] .pa-bloom { background: #fdf3f7; }
 @media (prefers-color-scheme: light) {
   .pa-bloom { background: #fdf3f7; }
 }
-.pa-bloom__ico { width: 18px; height: 18px; display: inline-flex; }
+.pa-bloom__ico {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+}
+.pa-bloom__ico svg {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.pa-bloom:hover .pa-bloom__ico svg {
+  transform: rotate(72deg) scale(1.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pa-bloom__ico svg { transition: none; }
+}
 
 /* Theme-responsive foliage — CSS fill/stroke override SVG presentation attributes */
 .flordle-deco path[fill="#9aa85a"] { fill: var(--flordle-olive); }
