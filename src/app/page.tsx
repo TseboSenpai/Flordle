@@ -88,6 +88,11 @@ export default observer(function Home() {
       </span>
       <span style={{ marginLeft: '0.005em' }}>rdle</span>
     </h1>
+    {store.lost && (
+      <div className="reveal" role="status" aria-live="polite">
+        <p className="reveal__word">{store.word}</p>
+      </div>
+    )}
     {store.guesses.map((_, i) => (
         <Guess
           key = {i}
@@ -96,9 +101,8 @@ export default observer(function Home() {
           isGuessed={i < store.currentGuess}
         />
     ))}
-  
+
     {store.won && <h1>You Won!</h1>}
-    {store.lost && <p style={{ textAlign: 'center' }}>You Lost!<br/>The word was: {store.word}</p>}
     <Qwerty store={store} />
     </div>
 

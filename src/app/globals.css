@@ -140,6 +140,35 @@ body {
 .key.present { background: var(--status-present); color: var(--tile-text-on-dark); }
 .key.absent { background: var(--key-absent-bg); color: var(--tile-text-on-dark); }
 
+/* Word reveal — loss state */
+.reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+.reveal__label {
+  margin: 0;
+  font: 500 14px/1 'Fredoka', system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #caa9bb;
+}
+.reveal__word {
+  margin: 0;
+  font: 700 40px/1 'Fredoka', system-ui, sans-serif;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #f4dfe9;
+}
+html[data-theme="light"] .reveal__label { color: #a87f92; }
+html[data-theme="light"] .reveal__word  { color: #7a2949; }
+@media (prefers-color-scheme: light) {
+  .reveal__label { color: #a87f92; }
+  .reveal__word  { color: #7a2949; }
+}
+
 /* Bloom button — "Play again" / "Contact" shared style */
 .pa-bloom {
   font: 600 17px/1 'Fredoka', system-ui, sans-serif;
