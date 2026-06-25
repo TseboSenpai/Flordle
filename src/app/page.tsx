@@ -141,11 +141,11 @@ export default observer(function Home() {
         Contact
       </button>
     </div>
-
+    
+    {/*
     word: {store.word}
     guesses: {JSON.stringify(store.guesses)}
-  
-    
+    */}
 
     {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
   </div>
