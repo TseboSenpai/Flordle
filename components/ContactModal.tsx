@@ -108,7 +108,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
         {/* Avatar */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '16px' }}>
           <img
-            src="/avatar.png"
+            src="/pixelme.png"
             alt="T-Senpai pixel avatar"
             style={{
               width: '88px',
@@ -130,15 +130,16 @@ export default function ContactModal({ onClose }: ContactModalProps) {
           marginBottom: '24px',
           textAlign: 'center',
         }}>
-          Get in touch
+          Thanks!
         </h2>
 
         {submitted ? (
           <p style={{ textAlign: 'center', color: 'var(--highlight)', fontFamily: "'Playfair Display', serif", fontSize: '17px', padding: '24px 0' }}>
-            Thanks! I&apos;ll be in touch 🌸
+            Your feedback is valued! 🌸
           </p>
         ) : (
           <form ref={formRef} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <input type="hidden" name="site" value="Flordle" />
             <div>
               <label htmlFor="cf-name" style={labelStyle}>Your name</label>
               <input
@@ -172,7 +173,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="What's on your mind?"
+                placeholder="What can I improve?"
                 rows={5}
                 required
                 style={{ ...inputStyle, resize: 'vertical' }}
